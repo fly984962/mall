@@ -1,8 +1,6 @@
 <template>
   <div>
-    <el-card class="box-card">
-      首页
-    </el-card>
+    <router-view />
   </div>
 </template>
 

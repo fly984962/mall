@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-card class="box-card">
-      首页
+      网易云音乐
     </el-card>
   </div>
 </template>

@@ -7,7 +7,48 @@ const routes = [
   {
     path: '/',
     name: 'layout',
-    component: () => import('../views/layout/index')
+    component: () => import('../views/layout/index'),
+    children: [
+      {
+        path: '/home',
+        name: 'home',
+        component: () => import('../views/home/index'),
+      },
+      {
+        path: '/commodity',
+        name: 'commodity',
+        component: () => import('../views/commodity/index'),
+        children: [
+          {
+            path: '/commodity/commodityList',
+            name: 'commodityList',
+            component: () => import('../views/commodity/commodityList/index'),
+          },
+          {
+            path: '/commodity/commodityAdd',
+            name: 'commodityAdd',
+            component: () => import('../views/commodity/commodityAdd/index'),
+          }
+        ]
+      },
+      {
+        path: '/order',
+        name: 'order',
+        component: () => import('../views/order/index'),
+        children: [
+          {
+            path: '/order/orderList',
+            name: 'orderList',
+            component: () => import('../views/order/orderList/index'),
+          }
+        ]
+      },
+      {
+        path: '/music',
+        name: 'music',
+        component: () => import('../views/music/index'),
+      }
+    ]
   }
 ]
 

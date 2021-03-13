@@ -3,28 +3,16 @@
     <div class="header">
       <Header />
     </div>
-    <div class="aside" :style="AsideSty">
+    <div class="aside">
       <Aside />
     </div>
-    <div class="main" :style="MainSty">
-      <!-- <li>12</li>
-      <li>12</li>
-      <li>12</li>
-      <li>12</li>
-      <li>12</li>
-      <li>12</li>
-      <li>12</li>
-      <li>12</li> -->
-      <el-card class="box-card">
-        <li>12</li>
-        <li>12</li>
-        <li>12</li>
-        <li>12</li>
-        <li>12</li>
-        <li>12</li>
-        <li>12</li>
-        <li>12</li>
-      </el-card>
+    <div class="main">
+      <div class="main_top">页签</div>
+        <transition
+          enter-active-class = 'animated fadeInRightBig'
+        >
+          <router-view></router-view>
+        </transition>
     </div>
     <!-- <el-container>
       <el-header class="header">
@@ -50,13 +38,7 @@ export default {
   },
   data() {
     return {
-      AsideSty: {
-        "height" : window.innerHeight - 60 + "px"
-      },
-      MainSty: {
-        "height" : window.innerHeight - 60 + "px",
-        "width" : window.innerWidth - 200 + "px"
-      }
+      
     }
   },
   mounted() {
@@ -69,22 +51,39 @@ export default {
 .header{
   width: 100%;
   height: 60px;
-  // background: red;
+  // background: saddlebrown;
   border-bottom: 1px solid #333;
   box-sizing: border-box;
 }
 .aside {
+  // background-color: #cc85d9;
   width: 200px;
-  // background: blue;
-  // height: 100vh;
-  float: left;
+  position: absolute;
+  top: 60px;
+  bottom: 0px;
+  left: 0px;
 }
 .main {
   // height: 100vh;
-  // background: yellow;
+  width: calc(100vw - 200px);
+  // height: 100%;
+  background: rgb(243, 241, 241);
   padding: 20px;
   box-sizing: border-box;
   overflow: auto;
   float: left;
+  position: absolute;
+  top: 90px;
+  bottom: 0px;
+  left: 200px;
+}
+.main_top {
+  position: fixed;
+  width: calc(100vw - 200px);
+  height: 30px;
+  // background: red;
+  border-bottom: 1px solid #333;
+  top: 60px;
+  left: 200px;
 }
 </style>

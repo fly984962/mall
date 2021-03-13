@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-card class="box-card">
-      首页
+      添加商品
     </el-card>
   </div>
 </template>
