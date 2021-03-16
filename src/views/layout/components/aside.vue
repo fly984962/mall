@@ -19,7 +19,11 @@
         </template>
         <el-menu-item-group>
           <el-menu-item :index="subItem.path" v-for="(subItem, subIndex) in item.children" :key="subIndex" @click="clickMenu(subItem)">
-            {{ subItem.label }}
+            <template slot="title">
+              <i class="el-icon-video-play"></i>
+              <span>{{ subItem.label }}</span>
+            </template>
+            <!-- {{ subItem.label }} -->
           </el-menu-item>
         </el-menu-item-group>
       </el-submenu>

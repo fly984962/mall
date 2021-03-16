@@ -10,6 +10,10 @@ const routes = [
     component: () => import('../views/layout/index'),
     children: [
       {
+        path:'/',
+        redirect:'/home'
+      },
+      {
         path: '/home',
         name: 'home',
         component: () => import('../views/home/index'),
@@ -51,6 +55,11 @@ const routes = [
     ]
   }
 ]
+
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {  // 解决导航条点击两次报错
+return originalPush.call(this, location).catch(err => err)
+}
 
 const router = new VueRouter({
   mode: 'history',
